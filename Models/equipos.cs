@@ -19,5 +19,6 @@ namespace Practica01.Models
         public int? estado_equipo_id { get; set; }
         public String  estado { get; set; }
 
+
     }
 }
