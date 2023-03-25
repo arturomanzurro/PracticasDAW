@@ -23,7 +23,13 @@ namespace Practica01.Controllers
 
         public IActionResult Get()
         {
-            List<equipos> listadoEquipo = (from e in _equiposContexto.equipos select e).ToList();
+            List<equipos> listadoEquipo = (from e in _equiposContexto.equipos join m in _equiposContexto.marcas on e.marca_id equals
+                                           m.id_marcas select new
+                                           {
+                                               e.id_equipos,
+
+                                           }
+                                           
 
             if (listadoEquipo.Count() == 0)
             {
